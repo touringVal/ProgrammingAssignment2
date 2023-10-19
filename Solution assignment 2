@@ -1,6 +1,6 @@
 
 
-makeCacheMatrix <- function(x = matrix()) {
+make_cac_mat <- function(x = matrix()) {
         inverse <- NULL
         set <- function(b){
                 x <<- b
@@ -13,14 +13,14 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-cacheSolve <- function(x, ...) {
+cac_inv_solv <- function(x, ...) {
         inverse <- x$get_inv()
         if(!is.null(inverse)){
                 message("go get cached")
                 return(inverse)
         }
         mat_to_inv <- x$get()
-        inverse <- solve(mat_to_inv, ...)
+        inverse <- solve(met_to_inv, ...)
         x$set_inv(inverse)
         inverse
 }
